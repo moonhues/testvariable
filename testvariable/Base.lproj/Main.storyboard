@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iGn-II-xnU">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--get pet name-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController title="get pet name" id="BYZ-38-t0r" customClass="petNameViewController" customModule="testvariable" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" placeholderIntrinsicWidth="600" placeholderIntrinsicHeight="600" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="119" placeholderIntrinsicHeight="30" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter pet name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g6A-JZ-GW3">
+                                <rect key="frame" x="148" y="353" width="119" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q9D-bo-Vgt">
+                                <rect key="frame" x="192" y="408" width="30" height="30"/>
+                                <state key="normal" title="next"/>
+                                <connections>
+                                    <segue destination="PPY-A2-phS" kind="show" identifier="goNext" id="T9H-hi-dSs"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Q9D-bo-Vgt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0HP-Wp-FMU"/>
+                            <constraint firstItem="g6A-JZ-GW3" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="NBP-C3-qWP"/>
+                            <constraint firstItem="Q9D-bo-Vgt" firstAttribute="top" secondItem="g6A-JZ-GW3" secondAttribute="bottom" constant="25" id="XHl-gS-sLJ"/>
+                            <constraint firstItem="g6A-JZ-GW3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ssD-Gz-b1B"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="petNameTextField" destination="g6A-JZ-GW3" id="S0E-cL-la4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="116" y="369"/>
+        </scene>
+        <!--Capture image-->
+        <scene sceneID="Mjj-Fa-hse">
+            <objects>
+                <viewController title="Capture image" id="iGn-II-xnU" customClass="imageCaptureViewController" customModule="testvariable" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JGA-4V-eyD"/>
+                        <viewControllerLayoutGuide type="bottom" id="xQp-vD-EjA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="i5f-La-yBw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vhD-Q2-1by">
+                                <rect key="frame" x="20" y="20" width="374" height="566"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="AVE-nR-f5B">
+                                <rect key="frame" x="113" y="636" width="188" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Edw-0t-9tf">
+                                        <rect key="frame" x="0.0" y="0.0" width="40" height="30"/>
+                                        <state key="normal" title="Snap!"/>
+                                        <connections>
+                                            <action selector="snapPhotoButton:" destination="iGn-II-xnU" eventType="touchUpInside" id="ddq-8I-W15"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wo0-iP-FTf">
+                                        <rect key="frame" x="140" y="0.0" width="48" height="30"/>
+                                        <state key="normal" title="Select!"/>
+                                        <connections>
+                                            <action selector="selectPhotoButton:" destination="iGn-II-xnU" eventType="touchUpInside" id="NZK-To-beV"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1zS-hT-797">
+                                <rect key="frame" x="192" y="706" width="30" height="30"/>
+                                <state key="normal" title="next"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="getpetname" id="OY5-FB-npl"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xQp-vD-EjA" firstAttribute="top" secondItem="1zS-hT-797" secondAttribute="bottom" id="232-GP-1Iz"/>
+                            <constraint firstItem="AVE-nR-f5B" firstAttribute="centerX" secondItem="i5f-La-yBw" secondAttribute="centerX" id="Biv-3I-0n4"/>
+                            <constraint firstItem="xQp-vD-EjA" firstAttribute="top" secondItem="vhD-Q2-1by" secondAttribute="bottom" constant="150" id="Kau-ot-q5F"/>
+                            <constraint firstItem="1zS-hT-797" firstAttribute="centerX" secondItem="i5f-La-yBw" secondAttribute="centerX" id="Mwq-d5-Xy4"/>
+                            <constraint firstItem="vhD-Q2-1by" firstAttribute="leading" secondItem="i5f-La-yBw" secondAttribute="leadingMargin" id="PBa-Tu-OTb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vhD-Q2-1by" secondAttribute="trailing" id="PiU-aJ-iq4"/>
+                            <constraint firstItem="vhD-Q2-1by" firstAttribute="top" secondItem="JGA-4V-eyD" secondAttribute="bottom" id="bIE-Bb-0kz"/>
+                            <constraint firstItem="xQp-vD-EjA" firstAttribute="top" secondItem="AVE-nR-f5B" secondAttribute="bottom" constant="70" id="bVd-7F-JGd"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="imageView" destination="vhD-Q2-1by" id="9Kw-dd-z4n"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c2F-9t-WzR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-364" y="369"/>
+        </scene>
+        <!--show pet name-->
+        <scene sceneID="HXm-hJ-2rM">
+            <objects>
+                <viewController title="show pet name" id="PPY-A2-phS" customClass="petNameDisplayViewController" customModule="testvariable" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VdW-Uf-2pD"/>
+                        <viewControllerLayoutGuide type="bottom" id="S0e-JI-ezl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5tv-eC-eTr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pet Name " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kAV-JP-dvC">
+                                <rect key="frame" x="167.5" y="357.5" width="79.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="kAV-JP-dvC" firstAttribute="centerX" secondItem="5tv-eC-eTr" secondAttribute="centerX" id="21Q-SP-eFz"/>
+                            <constraint firstItem="kAV-JP-dvC" firstAttribute="centerY" secondItem="5tv-eC-eTr" secondAttribute="centerY" id="wfd-rT-H61"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="petNameTextLabel" destination="kAV-JP-dvC" id="1co-3W-TLC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="26X-Qo-D8x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="611" y="369"/>
+        </scene>
+    </scenes>
+</document>
