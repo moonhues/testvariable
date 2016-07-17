@@ -9,8 +9,10 @@
 import UIKit
 
 class petNameViewController: UIViewController {
-
+    
     @IBOutlet weak var petNameTextField: UITextField!
+    
+    var post = Post?()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,14 +21,14 @@ class petNameViewController: UIViewController {
         print("ddd")
     }
     
-
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let DestViewController = segue.destinationViewController as! petNameDisplayViewController
+        let DestViewController1 = segue.destinationViewController as! petNameDisplayViewController
         
-            let post = Post()
-            post.title = petNameTextField.text!
-        DestViewController.post = post
+       // let post = Post()
+        post!.title = petNameTextField.text!
+        DestViewController1.post = post
     }
-   
+    
 }
 

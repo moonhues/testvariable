@@ -122,9 +122,9 @@
 		B177C7761D3B449D00A0F856 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B177C77B1D3BA91000A0F856 /* imageCaptureViewController.swift */,
 				B177C7561D3B40B300A0F856 /* petNameViewController.swift */,
 				B177C7771D3B452400A0F856 /* petNameDisplayViewController.swift */,
-				B177C77B1D3BA91000A0F856 /* imageCaptureViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = SOURCE_ROOT;

@@ -10,6 +10,7 @@ import UIKit
 
 class petNameDisplayViewController: UIViewController {
     
+    @IBOutlet weak var imageView: UIImageView!
     
     @IBOutlet weak var petNameTextLabel: UILabel!
     
@@ -21,6 +22,7 @@ class petNameDisplayViewController: UIViewController {
       //  petNameTextLabel.text = labelText
         petNameTextLabel.text = post?.title
         print(petNameTextLabel.text)
+        imageView.image = post?.image
     }
 
 }

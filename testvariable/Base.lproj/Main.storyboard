@@ -124,20 +124,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pet Name " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kAV-JP-dvC">
-                                <rect key="frame" x="167.5" y="357.5" width="79.5" height="21"/>
+                                <rect key="frame" x="167.5" y="715" width="79.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KCo-BG-o7p">
+                                <rect key="frame" x="20" y="20" width="374" height="566"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="kAV-JP-dvC" firstAttribute="centerX" secondItem="5tv-eC-eTr" secondAttribute="centerX" id="21Q-SP-eFz"/>
-                            <constraint firstItem="kAV-JP-dvC" firstAttribute="centerY" secondItem="5tv-eC-eTr" secondAttribute="centerY" id="wfd-rT-H61"/>
+                            <constraint firstItem="KCo-BG-o7p" firstAttribute="top" secondItem="VdW-Uf-2pD" secondAttribute="bottom" id="18o-sW-e4O"/>
+                            <constraint firstItem="S0e-JI-ezl" firstAttribute="top" secondItem="kAV-JP-dvC" secondAttribute="bottom" id="3YO-oF-dqx"/>
+                            <constraint firstItem="S0e-JI-ezl" firstAttribute="top" secondItem="KCo-BG-o7p" secondAttribute="bottom" constant="150" id="qEW-Sw-DBH"/>
+                            <constraint firstItem="kAV-JP-dvC" firstAttribute="centerX" secondItem="5tv-eC-eTr" secondAttribute="centerX" id="sHA-by-0Gw"/>
+                            <constraint firstItem="KCo-BG-o7p" firstAttribute="leading" secondItem="5tv-eC-eTr" secondAttribute="leadingMargin" id="syb-is-tvR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="KCo-BG-o7p" secondAttribute="trailing" id="wzy-dB-9U5"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
+                        <outlet property="imageView" destination="KCo-BG-o7p" id="6rR-cs-WO6"/>
                         <outlet property="petNameTextLabel" destination="kAV-JP-dvC" id="1co-3W-TLC"/>
                     </connections>
                 </viewController>

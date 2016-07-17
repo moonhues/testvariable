@@ -18,10 +18,30 @@ class imageCaptureViewController: UIViewController, UINavigationControllerDelega
     }
     
     @IBAction func snapPhotoButton(sender: AnyObject) {
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
-        presentViewController(imagePicker, animated: true, completion: nil)
+        if (UIImagePickerController.isSourceTypeAvailable(.Camera))
+        {
+        if UIImagePickerController.availableCaptureModesForCameraDevice(.Rear) != nil {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
+            presentViewController(imagePicker, animated: true, completion: nil)
+        } else {
+            let alertController = UIAlertController(title: "Rear camera does not exist", message: "Application cannot access the camera", preferredStyle: .Alert)
+            
+            let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+            alertController.addAction(defaultAction)
+            
+            presentViewController(alertController, animated: true, completion: nil)
+        }
+        } else {
+            let alertController = UIAlertController(title: "Camera does not exist", message: "Application cannot access the camera", preferredStyle: .Alert)
+            
+            let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+            alertController.addAction(defaultAction)
+            
+            presentViewController(alertController, animated: true, completion: nil)
+            
+        }
     }
     
     @IBAction func selectPhotoButton(sender: AnyObject) {
@@ -37,7 +57,7 @@ class imageCaptureViewController: UIViewController, UINavigationControllerDelega
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let DestViewController = segue.destinationViewController as! petNameDisplayViewController
+        let DestViewController = segue.destinationViewController as! petNameViewController
         
         let post = Post()
         post.image = imageView.image!
